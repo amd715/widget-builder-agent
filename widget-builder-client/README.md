@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+# Widget Builder Client
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + TypeScript + Vite frontend application for building and designing UI widgets with an interactive playground environment.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Widget Builder Client is a full-featured web application that enables users to:
 
-## React Compiler
+- Create and configure UI widgets through an intuitive code editor
+- Test widgets in a live playground environment
+- Interact with an AI-powered chat interface for design assistance
+- Manage and organize widget projects
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Technology Stack
 
-## Expanding the ESLint configuration
+- **React 18** - UI framework
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool and dev server
+- **Tailwind CSS** - Utility-first styling
+- **ESLint** - Code quality and style checking
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Project Structure
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```
+src/
+├── components/          # Reusable React components
+│   ├── Header.tsx      # Application header
+│   ├── Layout.tsx      # Main layout wrapper
+│   ├── icons/          # SVG icon components
+│   └── playground/     # Interactive playground components
+│       ├── Playground.tsx    # Main playground container
+│       ├── chat/            # Chat interface
+│       ├── editor/          # Code editor
+│       └── navbar/          # Side navigation
+├── App.tsx             # Root component
+└── main.tsx            # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+### Prerequisites
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+- Node.js 16.x or higher
+- npm or yarn
+
+### Installation
+
+```bash
+cd widget-builder-client
+npm install
 ```
+
+### Development
+
+Start the development server with hot module replacement:
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`
+
+### Build
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+Output is generated in the `dist/` directory.
+
+### Preview
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Features
+
+- **Interactive Code Editor** - Write and edit widget code with syntax highlighting
+- **Live Playground** - Test widgets in real-time as you develop
+- **Chat Interface** - Get AI-powered suggestions and assistance
+- **Responsive Design** - Works seamlessly on different screen sizes
+- **Type Safety** - Full TypeScript support for robust development
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint checks
+
+## Contributing
+
+For development guidelines and contribution standards, see the main project documentation.
