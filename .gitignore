@@ -10,7 +10,7 @@ coverage/
 **/dist/
 **/build/
 .next/
-out/
+**/out/
 
 # Misc
 .DS_Store
